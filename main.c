@@ -4,21 +4,18 @@
 
 int main(){
     char func;
-    int routeArray[10][10];
-    int matArray[10][10];
+    int matArray[10][10]= {0};
     while(func != 'D'){
-        scanf(" %c", &func);
+        scanf("%c\n", &func);
         if(func == 'A'){
             A(matArray);
             makeRoute(matArray); 
         }
         else if (func =='B'){
-            B(routeArray);
-            printf("\n");
+            B(matArray);
         }
         else if(func == 'C'){
-            C(routeArray);
-            printf("\n");
+            C(matArray);
         }
     }
     return 0;
