@@ -9,8 +9,9 @@ int main(){
     while(func != 'D'){
         scanf(" %c", &func);
         if(func == 'A'){
-            matArray = A();
-            routeArray= makeRoute(matArray);        }
+            A(matArray);
+            makeRoute(matArray); 
+        }
         else if (func =='B'){
             B(routeArray);
             printf("\n");
