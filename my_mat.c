@@ -28,11 +28,11 @@ void makeRoute(int arr[10][10]){
 		for(int i=0;i<10;i++)
 		{
 			for(int j=0;j<10;j++)
-			{
+			{	if(arr[i][j] != 0){
 				if(arr[i][j]>arr[i][k]+arr[k][j])
 				{
 					arr[i][j]=arr[i][k]+arr[k][j];
-				}
+				}}
 		    }
 	    }
 	}
