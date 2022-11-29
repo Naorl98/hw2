@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "my_mat.h"
-int ** A(){
-    int arr[10][10];
+void A(int arr[10][10]){
     for(int i=0; i<10; i++){
         for(int j=0; j<10; j++){
             int number;
@@ -9,8 +8,6 @@ int ** A(){
             arr[i][j]= number;
         }
     }
-    int **p = arr;
-    return p;
 }
 
 void B(int arr[10][10]){
@@ -20,7 +17,7 @@ void B(int arr[10][10]){
     else printf("False");
   
 }
-int ** makeRoute(int arr[10][10]){
+void makeRoute(int arr[10][10]){
     for (int i = 0; i < 10; i++)
     {
         arr[i][i]=0;
@@ -39,8 +36,6 @@ int ** makeRoute(int arr[10][10]){
 		    }
 	    }
 	}
-    int **p = arr;
-    return p;
 }
 void C(int arr[10][10]){
     int i, j;
