@@ -1,13 +1,16 @@
 #include <stdio.h>
 #include "my_mat.h"
-void A(){
+int ** A(){
+    int arr[10][10];
     for(int i=0; i<10; i++){
         for(int j=0; j<10; j++){
             int number;
             scanf(" %d", &number);
-            matArray[i][j]= number;
+            arr[i][j]= number;
         }
     }
+    int **p = arr;
+    return p;
 }
 
 void B(int arr[10][10]){
@@ -17,14 +20,10 @@ void B(int arr[10][10]){
     else printf("False");
   
 }
-void makeRoute(int arr[10][10]){
+int ** makeRoute(int arr[10][10]){
     for (int i = 0; i < 10; i++)
     {
-        for (int j = 0; j < 10; j++)
-        {
-            if(i==j) routeArray[i][j]=0;
-            else routeArray[i][j]=arr[i][j];
-        }
+        arr[i][i]=0;
     }
     
     for(int k=0;k<10;k++)
@@ -33,13 +32,15 @@ void makeRoute(int arr[10][10]){
 		{
 			for(int j=0;j<10;j++)
 			{
-				if(routeArray[i][j]>routeArray[i][k]+routeArray[k][j])
+				if(arr[i][j]>arr[i][k]+arr[k][j])
 				{
-					routeArray[i][j]=routeArray[i][k]+routeArray[k][j];
+					arr[i][j]=arr[i][k]+arr[k][j];
 				}
 		    }
 	    }
 	}
+    int **p = arr;
+    return p;
 }
 void C(int arr[10][10]){
     int i, j;
@@ -47,5 +48,5 @@ void C(int arr[10][10]){
     if(arr[i][j] == 0)
         printf("-1");
     else
-    printf(" %ls", &arr[i][j]);
+    printf(" %d", arr[i][j]);
 }
