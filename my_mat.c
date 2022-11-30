@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include "my_mat.h"
-
-void A(int crate[10][10]){
+#include <stdlib.h>
+#define INF 99999999
+void A(int create[10][10]){
     for(int i=0; i<10; i++){
         for(int j=0; j<10; j++){
             int number;
             scanf("%d\n",&number);
-            crate[i][j]= number;
+            create[i][j]= number;
         }
     }
 }
@@ -14,7 +15,7 @@ void A(int crate[10][10]){
 void B(int TorF[10][10]){
     int i, j;
     scanf("%d %d\n", &i, &j);
-    if(TorF[i][j] == 99999999 || TorF[i][j] <= 0)
+    if(TorF[i][j] == INF || TorF[i][j] <= 0)
         printf("False\n");
     else 
         printf("True\n");
@@ -24,7 +25,7 @@ void makeRoute(int route[10][10]){
 	for(int i=0;i<10;i++){
 		for(int j=0;j<10;j++){
             if(route[i][j] == 0)
-                route[i][j] = 99999999;
+                route[i][j] = INF;
         }
     }     
     for (int i = 0; i < 10; i++)
@@ -42,7 +43,7 @@ void makeRoute(int route[10][10]){
 				if(route[i][j]>route[i][k]+route[k][j])
 				{ 
                     if(route[i][k]+route[k][j]<0){
-                        if(route[i][k]==99999999) 
+                        if(route[i][k]==INF) 
                             route[i][j]= route[k][j];
                         else
                             route[i][j]=  route[i][k];
@@ -56,8 +57,11 @@ void makeRoute(int route[10][10]){
 void C(int shorter[10][10]){
     int i, j;
     scanf("%d %d\n", &i, &j);
-    if (shorter[i][j] == 99999999 || shorter[i][j] <= 0 ) 
+    if (shorter[i][j] == INF || shorter[i][j] <= 0 ) 
         printf("-1\n");
     else if(i==j) printf("-1\n");
     else printf("%d\n",shorter[i][j]);
+}
+void D(){
+    exit(0);
 }
