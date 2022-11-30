@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "my_mat.h"
+#include <stdlib.h>
 
 
 int main(){
@@ -17,6 +18,8 @@ int main(){
         else if(func == 'C'){
             C(matArray);
         }
+        else if(func == 'C'){
+            D();
+        }
     }
-    return 0;
 }
