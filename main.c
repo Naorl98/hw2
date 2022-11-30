@@ -4,7 +4,7 @@
 
 
 int main(){
-    char func;
+    char func = '0';
     int matArray[10][10]= {0};
     while(func != 'D'){
         scanf("%c\n", &func);
